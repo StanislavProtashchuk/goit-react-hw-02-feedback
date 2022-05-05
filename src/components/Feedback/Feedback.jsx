@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
+import Controls from './Controls/Controls';
 // import PropTypes from 'prop-types';
 
-class Counter extends React.Component{
+class Counter extends Component{
 
     state = {
         good: 0,
@@ -9,40 +10,29 @@ class Counter extends React.Component{
         bad: 0,
     };
 
-    handleGood = () => {
+    handleFeedback = (e) => {
+        const name = e.target.name;
         this.setState((prevState) => ({
-            good: prevState.good + 1,
-        }));
-    };
-
-        handleNeutral = () => {
-        this.setState((prevState) => ({
-            neutral: prevState.neutral + 1,
-        }));
-    };
-
-            handleBad = () => {
-        this.setState((prevState) => ({
-            bad: prevState.bad + 1,
+            [name]: prevState[name] + 1,
         }));
     };
 
     render() {
         return (
-        <div>
-        <h2>Please leave feedback</h2>
-        <button type="button" onClick={this.handleGood}>Good</button>
-        <button type="button" onClick={this.handleNeutral}>Neutral</button>
-            <button type="button" onClick={this.handleBad}>Bad</button>
-            <h3>Statistics</h3>
-            <ul>
+            <div>
+                <h2>Please leave feedback</h2>
+                <Controls
+                    onHandleFeedback={this.handleFeedback}
+                />
+                <h3>Statistics</h3>
+                <ul>
                     <li>Good: <span>{this.state.good}</span> </li>
-                <li>Neutral: <span>{this.state.neutral}</span> </li>
-                <li>Bad: <span>{this.state.bad}</span> </li>
-            </ul>
+                    <li>Neutral: <span>{this.state.neutral}</span> </li>
+                    <li>Bad: <span>{this.state.bad}</span> </li>
+                </ul>
             </div>
-    )
-    }
-}
+        );
+    };
+};
 
 export default Counter;
