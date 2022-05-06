@@ -1,0 +1,18 @@
+.item{
+    margin-left: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    color: rgb(243, 159, 56);
+}
+
+.good{
+    color: rgb(103, 218, 58);
+}
+
+.neutral{
+    color: rgb(251, 255, 0);
+}
+
+.bad{
+    color: rgb(255, 0, 0);
+}

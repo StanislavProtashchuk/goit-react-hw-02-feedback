@@ -1,0 +1,28 @@
+.buttonList{
+        display: flex;
+            align-items: center;
+            justify-content: space-between;
+}
+
+.button{
+    width: 100px;
+    height: 30px;
+    font-size: 17px;
+    background-color: bisque;
+    border-radius: 5px;
+}
+
+.button[name='good']:hover,
+.button[name='good']:focus{
+    background-color: rgb(103, 218, 58);
+}  
+
+.button[name='neutral']:hover,
+.button[name='neutral']:focus {
+    background-color: rgb(251, 255, 0);
+}
+
+.button[name='bad']:hover,
+.button[name='bad']:focus {
+    background-color: rgb(255, 0, 0);
+}
