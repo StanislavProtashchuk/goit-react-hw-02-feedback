@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
-import Controls from './Controls/Controls';
-// import PropTypes from 'prop-types';
+import Controls from './FeedbackOptions/FeedbackOptions';
 
 class Counter extends Component{
 
     state = {
-        good: 0,
+        good: 1,
         neutral: 0,
         bad: 0,
     };
