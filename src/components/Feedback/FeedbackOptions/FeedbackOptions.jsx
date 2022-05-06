@@ -1,11 +1,19 @@
-import React from "react";
+const FeedbackOptions = ({ options, onLeaveFeedback }) => {
+    return (
+        <ul>
+            {options.map(option => {
+                return (
+                    <button                        
+                        type="button"
+                        name={option}
+                        onClick={onLeaveFeedback}
+                    >
+                        {option}
+                    </button>
+                );
+            })}
+        </ul>
+    );
+};
 
-const Controls = ({onHandleFeedback}) => (
-    <div>
-        <button type="button" name="good" onClick={onHandleFeedback}>Good</button>
-        <button type="button" name="neutral" onClick={onHandleFeedback}>Neutral</button>
-        <button type="button" name="bad" onClick={onHandleFeedback}>Bad</button>
-    </div>
-);
-
-export default Controls;
+export default FeedbackOptions;
