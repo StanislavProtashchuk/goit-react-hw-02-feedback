@@ -17,7 +17,18 @@ class Counter extends Component{
         }));
     };
 
+    countTotalFeedback() {
+    const { good, neutral, bad } = this.state;
+    this.total = good + neutral + bad;
+    }
+
+    countPositiveFeedbackPercentage() {
+        this.goodPersentage = Math.round((this.state.good / this.total) * 100);
+    }
+
     render() {
+        this.countTotalFeedback();
+        this.countPositiveFeedbackPercentage();
         return (
             <div>
                 <h2>Please leave feedback</h2>
@@ -29,6 +40,8 @@ class Counter extends Component{
                     <li>Good: <span>{this.state.good}</span> </li>
                     <li>Neutral: <span>{this.state.neutral}</span> </li>
                     <li>Bad: <span>{this.state.bad}</span> </li>
+                    <li>Total: <span>{this.total}</span> </li>
+                    <li>Positive feedback: <span>{this.goodPersentage}%</span> </li>
                 </ul>
             </div>
         );
