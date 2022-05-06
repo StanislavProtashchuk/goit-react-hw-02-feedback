@@ -22,13 +22,6 @@ class Counter extends Component{
         });
     };
 
-    // leaveFeedback = (e) => {
-    //     const name = e.target.name;
-    //     this.setState((prevState) => ({
-    //         [name]: prevState[name] + 1,
-    //     }));
-    // };
-
     countTotalFeedback() {
     const { good, neutral, bad } = this.state;
     this.total = good + neutral + bad;
@@ -60,7 +53,7 @@ class Counter extends Component{
                             total={this.total}
                             positivePercentage={this.percentPositivFeedback}
                         />
-                    )};
+                    )}
                 </Section>    
             </div>
         );
